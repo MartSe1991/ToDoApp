@@ -1,0 +1,13 @@
+@import "../../colors.scss";
+@import "../../font_size.scss";
+
+.title {
+  color: $secondary;
+  font-size: $medium;
+  font-weight: bold;
+}
+
+.main {
+  display: block;
+  width: 500px;
+}

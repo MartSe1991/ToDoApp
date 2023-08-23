@@ -1,0 +1,22 @@
+@import "../../colors.scss";
+@import "../../font_size.scss";
+
+.button {
+  font: $medium;
+  border: 1px solid $secondary;
+  background: $secondary;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.button:hover,
+.button:active {
+  background: $secondary;
+  border-color: $secondary;
+}
+
+.button:focus {
+  outline: none;
+}

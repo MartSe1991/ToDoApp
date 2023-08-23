@@ -1,0 +1,12 @@
+@import "../../colors.scss";
+@import "../../font_size.scss";
+
+.title {
+  color: $secondary;
+  font-size: $large;
+  font-weight: bold;
+}
+
+.main {
+  display: block;
+}

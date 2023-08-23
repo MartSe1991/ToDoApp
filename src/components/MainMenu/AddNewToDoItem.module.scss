@@ -1,0 +1,12 @@
+@import "../../colors.scss";
+@import "../../font_size.scss";
+
+.list {
+  padding: 20px;
+}
+
+.elems {
+  display: block;
+  color: $primary;
+  font-size: $medium;
+}
