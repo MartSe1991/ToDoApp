@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Button from "../UI/Button";
-import classes from "./AddNewToDoItem.module.scss";
+import classes from "./AddNewElemModal.module.scss";
 
-const AddNewToDoItem = (props) => {
+//In questo comp guarda come usi funzione che viene da App.jsx
+// e gli passi valori contenuti in questo comp "enteredListItem"
+const AddNewElemModal = (props) => {
   const [enteredListItem, setEnteredListItem] = useState("");
 
   const listItemChangeHandler = (event) => {
@@ -18,9 +20,9 @@ const AddNewToDoItem = (props) => {
 
   return (
     <form onSubmit={addNewToDoItemHandler}>
-      <label htmlFor="list_item" className={classes.elems}>
+      {/* <label htmlFor="list_item" className={classes.elems}>
         Insert
-      </label>
+      </label> */}
       <input
         className={classes.elems}
         id="list_item"
@@ -29,10 +31,10 @@ const AddNewToDoItem = (props) => {
         value={enteredListItem}
       />
       <Button type="submit" className={classes.elems}>
-        Add New List
+        New List
       </Button>
     </form>
   );
 };
 
-export default AddNewToDoItem;
+export default AddNewElemModal;

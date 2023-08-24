@@ -1,5 +1,5 @@
 @import "../../colors.scss";
-@import "../../font_size.scss";
+@import "../../font-size.scss";
 
 .title {
   color: $secondary;
@@ -9,5 +9,5 @@
 
 .main {
   display: block;
-  width: 500px;
+  // width: 100vh;
 }

@@ -1,22 +1,26 @@
 @import "../../colors.scss";
-@import "../../font_size.scss";
+@import "../../font-size.scss";
 
 .button {
+  display: flex;
+  gap: 7px;
   font: $medium;
-  border: 1px solid $secondary;
-  background: $secondary;
-  color: white;
+  border: none;
+  background: transparent;
+  color: $secondary;
+  font-weight: bold;
   padding: 5px;
   cursor: pointer;
   margin-top: 15px;
-}
 
-.button:hover,
-.button:active {
-  background: $secondary;
-  border-color: $secondary;
-}
+  //GUARDA COME SI USA "&" PER FARE RIFERIMENTO A STESSA CLASSE!
+  // &:hover,
+  // &:active {
+  //   background: $secondary;
+  //   border-color: $secondary;
+  // }
 
-.button:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }

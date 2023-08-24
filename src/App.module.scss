@@ -3,9 +3,9 @@
 .main {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  margin: 60px;
-  gap: 50px;
+  // justify-content: flex-start;
+  // margin: 0px 0px 0px 60px;
+  // gap: 10px;
 }
 
 .column {
@@ -16,5 +16,8 @@
 }
 
 .secondPart {
+  height: 100vh;
+  width: 100vh;
   background-color: $whitino;
+  padding: 30px;
 }
