@@ -4,6 +4,9 @@ import Card from "../UI/Card";
 import classes from "./Modal.module.scss";
 
 const Modal = (props) => {
+  //   In questo comp guarda come usi funzione che viene da App.jsx
+  // e gli passi valori contenuti in questo comp "enteredListItem"
+
   const [enteredListItem, setEnteredListItem] = useState("");
 
   const listItemChangeHandler = (event) => {
