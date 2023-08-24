@@ -1,12 +1,10 @@
 @import "../../colors.scss";
 @import "../../font-size.scss";
 
-.title {
-  color: $secondary;
+.modal_title {
   font-size: $medium;
+  color: $secondary;
   font-weight: bold;
-}
-
-.main {
   display: block;
+  padding: 5px 0px;
 }

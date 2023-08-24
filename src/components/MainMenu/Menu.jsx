@@ -1,5 +1,6 @@
 import classes from "./Menu.module.scss";
-import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
+// import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
+import AddNewElem from "../AddNewElemModal/AddNewElem";
 
 const Menu = ({ onAddItem, items }) => {
   //GUARDA BENE LA STRUTTURA QUI SOTTO!!!!!!!!!!
@@ -17,7 +18,8 @@ const Menu = ({ onAddItem, items }) => {
     <div className={classes.main}>
       <h1 className={classes.title}>To do App</h1>
       {listedItems}
-      <AddNewElemModal onNewItemHandler={onAddItem} />
+      {/* <AddNewElemModal onNewItemHandler={onAddItem} /> */}
+      <AddNewElem onNewItemHandler={onAddItem} />
     </div>
   );
 };
