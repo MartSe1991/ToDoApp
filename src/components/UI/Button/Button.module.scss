@@ -1,8 +1,9 @@
-@import "../../colors.scss";
-@import "../../font-size.scss";
+@import "../../../colors.scss";
+@import "../../../font-size.scss";
 
-.button {
+.add_button {
   display: flex;
+  border: 1px solid #4f005f;
   gap: 7px;
   font-size: $medium;
   border: none;
@@ -23,4 +24,21 @@
   &:focus {
     outline: none;
   }
+}
+
+.button {
+  border: 1px solid #4f005f;
+  font-weight: bold;
+  color: $white;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.danger {
+  background: red;
+}
+
+.default {
+  background: $secondary;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../UI/Button";
+import AddButton from "../UI/Button/AddButton";
 import Modal from "./Modal";
-import classes from "../UI/Button.module.scss";
+import classes from "../UI/Button/Button.module.scss";
 
 const AddNewElem = ({ onNewItemHandler }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -10,16 +10,26 @@ const AddNewElem = ({ onNewItemHandler }) => {
     setOpenModal(true);
   };
 
+  const closeModalHandler = () => {
+    setOpenModal(false);
+    console.log("Ciao");
+  };
+
   return (
     <React.Fragment>
-      {openModal && <Modal onNewItemHandler={onNewItemHandler} />}
-      <Button
+      {openModal && (
+        <Modal
+          onNewItemHandler={onNewItemHandler}
+          onCloseModal={closeModalHandler}
+        />
+      )}
+      <AddButton
         type="submit"
         onClick={openModalHandler}
         className={classes.elems}
       >
         New List
-      </Button>
+      </AddButton>
     </React.Fragment>
   );
 };

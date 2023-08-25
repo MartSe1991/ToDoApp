@@ -1,12 +1,12 @@
 import classes from "./Button.module.scss";
 
-const Button = (props) => {
+const AddButton = (props) => {
   return (
-    <button type="submit" onClick={props.onClick} className={classes.button}>
+    <button onClick={props.onClick} className={classes["add_button"]}>
       <div>+</div>
       <span>{props.children}</span>
     </button>
   );
 };
 
-export default Button;
+export default AddButton;

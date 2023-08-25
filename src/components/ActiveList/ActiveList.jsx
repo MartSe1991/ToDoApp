@@ -1,11 +1,11 @@
 import classes from "./ActiveList.module.scss";
-import Button from "../UI/Button";
+import AddButton from "../UI/Button/AddButton";
 
 const ActiveList = () => {
   return (
     <div className={classes.main}>
       <h2 className={classes.title}>List of items</h2>
-      <Button>Add New Item</Button>
+      <AddButton>Add New Item</AddButton>
     </div>
   );
 };
