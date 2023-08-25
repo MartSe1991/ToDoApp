@@ -1,0 +1,23 @@
+@import "../../colors.scss";
+@import "../../font-size.scss";
+
+.list {
+  list-style: none;
+  font-size: $small;
+  color: $secondary;
+  font-weight: bold;
+}
+
+.elem {
+  padding: 5px 0px;
+}
+
+.title {
+  color: $secondary;
+  font-size: $large;
+  font-weight: bold;
+}
+
+.main {
+  display: block;
+}

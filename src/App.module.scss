@@ -1,0 +1,23 @@
+@import "./colors.scss";
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  // justify-content: flex-start;
+  // margin: 0px 0px 0px 60px;
+  // gap: 10px;
+}
+
+.column {
+  width: 300px;
+  height: 100vh;
+  background-color: $light_blue;
+  padding: 30px;
+}
+
+.secondPart {
+  height: 100vh;
+  background-color: $whitino;
+  padding: 30px;
+  flex-grow: 1;
+}

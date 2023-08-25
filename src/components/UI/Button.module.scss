@@ -1,0 +1,26 @@
+@import "../../colors.scss";
+@import "../../font-size.scss";
+
+.button {
+  display: flex;
+  gap: 7px;
+  font-size: $medium;
+  border: none;
+  background: transparent;
+  color: $secondary;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+
+  //GUARDA COME SI USA "&" PER FARE RIFERIMENTO A STESSA CLASSE!
+  // &:hover,
+  // &:active {
+  //   background: $secondary;
+  //   border-color: $secondary;
+  // }
+
+  &:focus {
+    outline: none;
+  }
+}
