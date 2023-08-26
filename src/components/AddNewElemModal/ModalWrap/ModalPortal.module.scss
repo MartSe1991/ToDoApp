@@ -1,0 +1,26 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  /* per sovrapporre elems */
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 20vh;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  width: 25rem; //era 40
+  left: 50%;
+  transform: translateX(-50%);
+
+  // @media (min-width: 768px) {
+  //media query = mostrare css alternativo in base a dei
+  // parametri(se schermo meno di 768px fai questo: ...
+}

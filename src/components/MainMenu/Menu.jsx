@@ -18,7 +18,6 @@ const Menu = ({ onAddItem, items }) => {
     <div className={classes.main}>
       <h1 className={classes.title}>To do App</h1>
       {listedItems}
-      {/* <AddNewElemModal onNewItemHandler={onAddItem} /> */}
       <AddNewElem onNewItemHandler={onAddItem} />
     </div>
   );
