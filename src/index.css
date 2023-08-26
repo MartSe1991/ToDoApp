@@ -1,3 +1,6 @@
+/*qui definiamo i fotn disponibili nel progetto. Chiocciola = direttive
+in questo caso specifica nome di una font-face  */
+
 @font-face {
   font-family: "openSans";
   src: url("./assets/font/OpenSans-Regular.ttf") format("truetype");
