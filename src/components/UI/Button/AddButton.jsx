@@ -3,7 +3,7 @@ import classes from "./Button.module.scss";
 const AddButton = (props) => {
   return (
     <button onClick={props.onClick} className={classes["add_button"]}>
-      <div>+</div>
+      <button className={classes.plus}>+</button>
       <span>{props.children}</span>
     </button>
   );

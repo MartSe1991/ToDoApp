@@ -26,6 +26,19 @@
   }
 }
 
+.plus {
+  border: none;
+  background-color: $secondary;
+  color: white;
+  font-weight: bold;
+  font-size: $medium;
+  text-align: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .button {
   border: 1px solid #4f005f;
   font-weight: bold;
