@@ -10,6 +10,8 @@
 
 .elem {
   padding: 5px 0px;
+  color: $secondary_opacity;
+  cursor: pointer;
 }
 
 .title {
@@ -20,4 +22,9 @@
 
 .main {
   display: block;
+}
+
+.selected {
+  padding: 5px;
+  cursor: pointer;
 }
