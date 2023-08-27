@@ -1,13 +1,13 @@
 import classes from "./ActiveList.module.scss";
-import AddButton from "../UI/Button/AddButton";
+import AddNewElem from "../AddNewElemModal/AddNewElem";
 
-const ActiveList = ({ activeListIndex, itemsList }) => {
+const ActiveList = ({ activeListIndex, itemsList, onAddItem }) => {
   return (
     <div className={classes.main}>
       {activeListIndex !== undefined && itemsList.length > 0 ? (
         <>
           <h2 className={classes.title}>{itemsList[activeListIndex].name}</h2>
-          <AddButton>Add New Item</AddButton>
+          <AddNewElem onNewItemHandler={onAddItem}>Add New Item</AddNewElem>
         </>
       ) : null}
     </div>
