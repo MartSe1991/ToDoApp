@@ -10,7 +10,7 @@
 
 .elem {
   padding: 5px 0px;
-  color: $secondary_opacity;
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -27,4 +27,5 @@
 .selected {
   padding: 5px;
   cursor: pointer;
+  opacity: 1;
 }
