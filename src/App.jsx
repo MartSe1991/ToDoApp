@@ -26,7 +26,7 @@ function App() {
 
   const addListHandler = (uItem) => {
     setItemsList((prevItem) => {
-      return [...prevItem, { name: uItem, items: [] }];
+      return [...prevItem, { title: uItem, items: [] }];
     });
   };
 
@@ -36,12 +36,12 @@ function App() {
 
   // aggiungi stringa inserita alla lista selezionata
   const addItemToListHandler = (uItem) => {
-    const itemsListCopy = [...itemsList];
-    const subListItems = itemsListCopy[activeListIndex].items.push({
+    const itemsListCopy = [...itemsList]; //devo creare copia perche react non permette di modificare il getter, e di sola lettura
+    itemsListCopy[activeListIndex].items.push({
       name: uItem,
       complete: false,
     });
-    setItemsList(subListItems);
+    setItemsList(itemsListCopy);
     console.log(itemsListCopy);
 
     // Step 1: crea copia di itemList all'interno di una costante (copia di un array)

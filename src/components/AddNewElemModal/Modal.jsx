@@ -38,7 +38,7 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
     <ModalPortal>
       <form onSubmit={addNewToDoItemHandler}>
         <label htmlFor="list_item" className={classes["modal_title"]}>
-          New Item
+          New Element
         </label>
         <input
           className={classes.input}
