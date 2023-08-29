@@ -9,10 +9,16 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
 
   const [enteredListItem, setEnteredListItem] = useState("");
 
+  const capitalize = (string) => {
+    return string[0].toUpperCase() + string.slice(1);
+  };
+
   const listItemChangeHandler = (event) => {
     event.preventDefault();
-    setEnteredListItem(event.target.value);
+    setEnteredListItem(capitalize(event.target.value));
   };
+  // PER SOPRA: ad onChange={listItemChangeHandler} dell'input
+  // applico il capitalize all'event che onChange cattura
 
   const addNewToDoItemHandler = (event) => {
     event.preventDefault();
@@ -32,7 +38,7 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
     <ModalPortal>
       <form onSubmit={addNewToDoItemHandler}>
         <label htmlFor="list_item" className={classes["modal_title"]}>
-          New Item
+          New Element
         </label>
         <input
           className={classes.input}

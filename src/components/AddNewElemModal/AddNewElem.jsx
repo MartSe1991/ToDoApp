@@ -3,7 +3,7 @@ import AddButton from "../UI/Button/AddButton";
 import Modal from "./Modal";
 import classes from "../UI/Button/Button.module.scss";
 
-const AddNewElem = ({ onNewItemHandler }) => {
+const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const openModalHandler = () => {
@@ -28,7 +28,7 @@ const AddNewElem = ({ onNewItemHandler }) => {
         onClick={openModalHandler}
         className={classes.elems}
       >
-        New List
+        {buttonTitle ? buttonTitle : "New List..."}
       </AddButton>
     </React.Fragment>
   );

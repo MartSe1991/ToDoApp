@@ -2,15 +2,33 @@ import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
 
-const Menu = ({ onAddItem, items }) => {
+const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
   //GUARDA BENE LA STRUTTURA QUI SOTTO!!!!!!!!!!
+
   const listedItems = (
     <ul className={classes.list}>
-      {items.map((item) => (
-        <li key={item.id} className={classes.elem}>
-          {item.name}
-        </li>
-      ))}
+      {items.map(
+        (
+          item,
+          key // la key/index é un valore che quando mappi viene assegnato automaticamente a
+          //ogni singolo elem che viene iterato (come la "i" nel ciclo for)
+        ) => (
+          <li
+            key={`list-${key}`}
+            className={`${classes.elem} ${
+              activeListIndex === key ? classes.selected : "" //classes.elem rimane sempre applicato.
+              // Solo classes.selected é applicata condizionalmente. Quindi lo style base dell'elemento
+              // é sempre applicato. Mentre .selected lo vuoi sovrapporre solo se l'elemento é selezionato.
+            }`}
+            onClick={() => onItemClick(key)} //IMPO!!! VOGLIO PASSARE UNA
+            // FUNZIONE A onClick. Io voglio eseguire funzione al Click non
+            // all'esecuzione del primo render. per ottenere questo risultato devo assegnare
+            // l'esecuzione della funzione non il risultato
+          >
+            {item.title}
+          </li>
+        )
+      )}
     </ul>
   );
 
