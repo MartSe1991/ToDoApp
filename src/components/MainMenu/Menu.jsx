@@ -16,7 +16,7 @@ const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
           <li
             key={`list-${key}`}
             className={
-              activeListIndex === key ? classes.selected : classes.elem
+              activeListIndex !== key ? classes.elem : classes.selected
             }
             onClick={() => onItemClick(key)} //IMPO!!! VOGLIO PASSARE UNA
             // FUNZIONE A onClick. Io voglio eseguire funzione al Click non
