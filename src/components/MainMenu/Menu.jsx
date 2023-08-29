@@ -15,9 +15,11 @@ const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
         ) => (
           <li
             key={`list-${key}`}
-            className={
-              activeListIndex !== key ? classes.elem : classes.selected
-            }
+            className={`${classes.elem} ${
+              activeListIndex === key ? classes.selected : "" //classes.elem rimane sempre applicato.
+              // Solo classes.selected é applicata condizionalmente. Quindi lo style base dell'elemento
+              // é sempre applicato. Mentre .selected lo vuoi sovrapporre solo se l'elemento é selezionato.
+            }`}
             onClick={() => onItemClick(key)} //IMPO!!! VOGLIO PASSARE UNA
             // FUNZIONE A onClick. Io voglio eseguire funzione al Click non
             // all'esecuzione del primo render. per ottenere questo risultato devo assegnare
