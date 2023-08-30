@@ -35,7 +35,7 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
   };
 
   return (
-    <ModalPortal>
+    <ModalPortal onClick={closeModal}>
       <form onSubmit={addNewToDoItemHandler}>
         <label htmlFor="list_item" className={classes["modal_title"]}>
           New Element

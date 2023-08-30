@@ -23,3 +23,14 @@
 .ul {
   padding-left: 0;
 }
+
+.sublist_items {
+  display: flex;
+  gap: 8px;
+}
+
+.ticketed {
+  // text-decoration: line-through;
+  color: gray;
+  opacity: 0.5;
+}

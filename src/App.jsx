@@ -73,3 +73,21 @@ function App() {
 }
 
 export default App;
+
+// STORIA DI addListHandler & addItemToListHandler
+// addListHandler:
+// 1 - Creata in App.jsx
+// 2 - Passata a Menu
+// 3 - Che la passa ad AddNewElem
+// 4 - Che la passa a Modal
+// 5 - Che la usa per catturare enteredListItem
+
+// addItemToListHandler
+// 1 - Creata in App.jsx
+// 2 - Passata ad ActiveList
+// 3 - Che la passa ad AddNewElem
+// 4 - Che la passa a Modal
+// 5 - Che la usa per catturare enteredListItem
+
+// Entrambe le funzioni al passaggio 2-3 vengono rinominate onAddItem/onNewItemHandler
+// e da lí seguono stesso percorso per essere usate nella Modal!!!
