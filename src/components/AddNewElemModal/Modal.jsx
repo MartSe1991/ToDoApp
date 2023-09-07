@@ -30,12 +30,12 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
   };
 
   const closeModal = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //previene il comportamento di default - in qst caso fare il submit
     onCloseModal();
   };
 
   return (
-    <ModalPortal>
+    <ModalPortal onClick={closeModal}>
       <form onSubmit={addNewToDoItemHandler}>
         <label htmlFor="list_item" className={classes["modal_title"]}>
           New Element

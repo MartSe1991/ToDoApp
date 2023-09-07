@@ -1,0 +1,14 @@
+@import "../../colors.scss";
+@import "../../font-size.scss";
+
+.box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.ticketed_box {
+  background-color: $secondary;
+  padding: 2px;
+}

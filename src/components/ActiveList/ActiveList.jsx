@@ -1,14 +1,30 @@
 import classes from "./ActiveList.module.scss";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
+import TickBox from "./TickBox";
 
-const ActiveList = ({ activeListIndex, itemsList, onAddItem }) => {
+const ActiveList = ({
+  activeListIndex,
+  itemsList,
+  onAddItem,
+  setItemComplete,
+}) => {
   const subListedItems = itemsList[activeListIndex] !== undefined && (
     <ul className={classes.ul}>
       {itemsList[activeListIndex].items.map((item, key) => {
         return (
-          <li key={`sub_list-${key}`} className={classes.list}>
-            {item.name}
-          </li>
+          <div key={`sub_list-${key}`} className={classes.sublist_items}>
+            <TickBox
+              complete={item.complete}
+              onSetComplete={() => {
+                setItemComplete(key);
+              }}
+            />
+            <li
+              className={`${classes.list} ${item.complete && classes.ticketed}`}
+            >
+              {item.name}
+            </li>
+          </div>
         );
       })}
     </ul>

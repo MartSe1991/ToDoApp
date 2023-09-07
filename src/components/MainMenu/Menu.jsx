@@ -25,7 +25,11 @@ const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
             // all'esecuzione del primo render. per ottenere questo risultato devo assegnare
             // l'esecuzione della funzione non il risultato
           >
-            {item.title}
+            {`${item.title} (${
+              item.items.filter((item) => {
+                return !item.complete;
+              }).length
+            } elements)`}
           </li>
         )
       )}

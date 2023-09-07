@@ -1,7 +1,7 @@
 import Menu from "./components/MainMenu/Menu";
 import ActiveList from "./components/ActiveList/ActiveList";
 import classes from "./App.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Step 1: creare state che memorizzi l'indice della lista selezionata
 // Step 2: creare un handler che riceva l'indice come parametro e che
@@ -23,11 +23,21 @@ import { useState } from "react";
 function App() {
   const [itemsList, setItemsList] = useState([]);
   const [activeListIndex, setActiveListIndex] = useState(undefined);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // useEffect(() => {
+  //   const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
+  //   if (storedUserLoggedInInformation === "1") {
+  //     setIsLoggedIn(true);
+  //   }
+  // }, []);
 
   const addListHandler = (uItem) => {
     setItemsList((prevItem) => {
       return [...prevItem, { title: uItem, items: [] }];
     });
+    // localStorage.setItem("isLoggedIn", "1");
+    // setIsLoggedIn(true);
   };
 
   const activeListHandler = (index) => {
@@ -51,6 +61,21 @@ function App() {
     // Step 4: optional (fai console.log della copia dell'object)
   };
 
+  const setItemComplete = (itemIndex) => {
+    //itemIndex in qst caso é la key dei sublist items
+    console.log(itemIndex);
+    const itemsListCopy = [...itemsList];
+    let selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
+    selectedElem.complete = !selectedElem.complete;
+    setItemsList(itemsListCopy);
+    console.log(itemsListCopy);
+    // Step 1: crea copia di itemList all'interno di una costante (copia di un array)
+    // Step 2: salva in una costante (selectedElem) l'elem della lista selezionato utilizzando itemListIndex come indice di itemListCopy e itemIndex come indice della sua proprieta items
+    // Step 3: setta la proprieta complete di questo object selezionato in modo che sia il contrario del suo valore corrente
+    // Step 4: prendi questo object modificato e fai setItemsList e usa qst object modificato come parametro
+    // Step 5: optional (fai console.log della copia dell'object)
+  };
+
   return (
     <main className={classes.main}>
       <div className={classes.column}>
@@ -66,6 +91,7 @@ function App() {
           activeListIndex={activeListIndex}
           itemsList={itemsList}
           onAddItem={addItemToListHandler}
+          setItemComplete={setItemComplete}
         />
       </div>
     </main>
@@ -73,3 +99,21 @@ function App() {
 }
 
 export default App;
+
+// STORIA DI addListHandler & addItemToListHandler
+// addListHandler:
+// 1 - Creata in App.jsx
+// 2 - Passata a Menu
+// 3 - Che la passa ad AddNewElem
+// 4 - Che la passa a Modal
+// 5 - Che la usa per catturare enteredListItem
+
+// addItemToListHandler
+// 1 - Creata in App.jsx
+// 2 - Passata ad ActiveList
+// 3 - Che la passa ad AddNewElem
+// 4 - Che la passa a Modal
+// 5 - Che la usa per catturare enteredListItem
+
+// Entrambe le funzioni al passaggio 2-3 vengono rinominate onAddItem/onNewItemHandler
+// e da lí seguono stesso percorso per essere usate nella Modal!!!
