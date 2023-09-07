@@ -1,10 +1,10 @@
 import classes from "./TickBox.module.scss";
 
-const TickBox = ({ onClick, tickBox }) => {
+const TickBox = ({ complete, onSetComplete }) => {
   return (
     <div
-      className={`${classes.box} ${tickBox && classes.ticketed_box}`}
-      onClick={onClick}
+      className={`${classes.box} ${complete && classes.ticketed_box}`}
+      onClick={onSetComplete}
     />
   );
 };

@@ -30,7 +30,7 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
   };
 
   const closeModal = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //previene il comportamento di default - in qst caso fare il submit
     onCloseModal();
   };
 

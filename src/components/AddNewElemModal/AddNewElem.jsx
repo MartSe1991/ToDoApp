@@ -12,7 +12,6 @@ const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
 
   const closeModalHandler = () => {
     setOpenModal(false);
-    console.log("Ciao");
   };
 
   return (
@@ -23,6 +22,7 @@ const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
           onCloseModal={closeModalHandler}
         />
       )}
+
       <AddButton
         type="submit"
         onClick={openModalHandler}
