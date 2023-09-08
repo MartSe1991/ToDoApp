@@ -32,12 +32,32 @@ function App() {
   //   }
   // }, []);
 
+  const persisted_list = "persisted_list";
+
+  useEffect(() => {
+    // 2 - una volta svolto punto 1, recupera il contenuto di local storage da "persisted_list"
+    // e salva in costante. Se esiste una persistedList allora setItemsList(JSON.parse(persistedList));
+    // (mi ritrasformo la versione stringify in js object). Di conseguenza se cancelli "persisted_list" da localStorage perdi lista che hai messo
+
+    const persistedList = localStorage.getItem(persisted_list);
+    if (persistedList) {
+      setItemsList(JSON.parse(persistedList));
+    }
+  }, []);
+
+  useEffect(() => {
+    // 1 - se itemList is true e se sua lunghezza>0, in browser local
+    // storage crea item persisted_list che contiene la versione stringified di itemList -->
+    // versione stringify perche localStorage.setItem accetta solo due stringhe come parametri!!!
+    if (itemsList && itemsList.length > 0) {
+      localStorage.setItem(persisted_list, JSON.stringify(itemsList));
+    }
+  }, [itemsList]);
+
   const addListHandler = (uItem) => {
     setItemsList((prevItem) => {
       return [...prevItem, { title: uItem, items: [] }];
     });
-    // localStorage.setItem("isLoggedIn", "1");
-    // setIsLoggedIn(true);
   };
 
   const activeListHandler = (index) => {
