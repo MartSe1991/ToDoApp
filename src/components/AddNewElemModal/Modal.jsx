@@ -41,6 +41,7 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
           New Element
         </label>
         <input
+          placeholder="Enter text..."
           className={classes.input}
           id="list_item"
           type="text"

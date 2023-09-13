@@ -96,6 +96,24 @@ function App() {
     // Step 5: optional (fai console.log della copia dell'object)
   };
 
+  const removeListHandler = () => {
+    const filteredList = itemsList.filter((item, key) => {
+      return key !== activeListIndex;
+    });
+    setActiveListIndex(undefined);
+    setItemsList(filteredList);
+  };
+
+  const removeListItemHandler = (selectedItemId) => {
+    // removeListItemHandler riceve "id" da activeList che corrisponde alla key dei subListElems mappati
+    const itemsActiveListCopy = [...itemsList[activeListIndex].items]; //creo copia subListElems attivi in quel momento
+    const filteredSubListItems = itemsActiveListCopy.filter((subItem, key) => {
+      //filtro gli items della lista attiva in quel momento
+      return key !== selectedItemId; //ritornami gli elems con key diversa da selectedItemId (l'id dell'elem con bidoncino cliccato)
+    });
+    setItemsList(filteredSubListItems);
+  };
+
   return (
     <main className={classes.main}>
       <div className={classes.column}>
@@ -112,6 +130,8 @@ function App() {
           itemsList={itemsList}
           onAddItem={addItemToListHandler}
           setItemComplete={setItemComplete}
+          removeListHandler={removeListHandler}
+          removeListItemHandler={removeListItemHandler}
         />
       </div>
     </main>
