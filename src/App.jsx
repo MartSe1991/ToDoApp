@@ -106,12 +106,13 @@ function App() {
 
   const removeListItemHandler = (selectedItemId) => {
     // removeListItemHandler riceve "id" da activeList che corrisponde alla key dei subListElems mappati
-    const itemsActiveListCopy = [...itemsList[activeListIndex].items]; //creo copia subListElems attivi in quel momento
-    const filteredSubListItems = itemsActiveListCopy.filter((subItem, key) => {
+    const itemsListCopy = [...itemsList];
+    const activeSubList = itemsListCopy[activeListIndex];
+    activeSubList.items = activeSubList.items.filter((subItem, key) => {
       //filtro gli items della lista attiva in quel momento
       return key !== selectedItemId; //ritornami gli elems con key diversa da selectedItemId (l'id dell'elem con bidoncino cliccato)
     });
-    setItemsList(filteredSubListItems);
+    setItemsList(itemsListCopy);
   };
 
   return (
