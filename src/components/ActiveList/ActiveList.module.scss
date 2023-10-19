@@ -5,28 +5,58 @@
   color: $secondary;
   font-size: $medium_large;
   font-weight: bold;
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
+  // display: flex;
+  // align-items: center;
+  // gap: 20px;
 }
 
 .main {
-  display: block;
+  display: inline-block;
 }
 
-.list {
+.sublist_title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .delete_big_button {
+    display: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .delete_big_button {
+      display: block;
+    }
+  }
+}
+
+.list_item {
+  height: 45px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
   list-style: none; // senza bullet points!!
   font-size: $medium;
   color: $secondary;
   font-weight: bold;
   padding-bottom: 20px;
+
+  .delete_button {
+    display: none;
+    cursor: pointer; // qst si mantiene anche sotto - sotto cambia solo display:block
+  }
+
+  &:hover {
+    .delete_button {
+      display: block;
+    }
+  }
 }
 
 .ul {
   padding-left: 0;
-}
-
-.sublist_items {
-  display: flex;
-  gap: 8px;
 }
 
 .ticketed {
