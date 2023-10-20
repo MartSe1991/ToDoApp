@@ -1,5 +1,6 @@
 @import "../../colors.scss";
 @import "../../font-size.scss";
+@import "../../shared.scss";
 
 .list {
   list-style: none; // senza bullet points!!
@@ -23,7 +24,11 @@
 }
 
 .main {
-  display: block;
+  display: inline-block;
+
+  @media (max-width: $mobile_breakpoint) {
+    width: auto;
+  }
 }
 
 .selected {

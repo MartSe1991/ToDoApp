@@ -1,0 +1,18 @@
+@import "../../colors.scss";
+@import "../../font-size.scss";
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  position: absolute;
+  top: 80px;
+  left: 30%;
+}
+
+.text {
+  color: #ababab;
+  font-weight: bold;
+  font-size: $medium_large;
+}

@@ -2,6 +2,7 @@ import classes from "./ActiveList.module.scss";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
 import TickBox from "./TickBox";
 import DeleteButton from "../UI/Button/DeleteButton";
+import EmptyList from "../ActiveList/EmptyList";
 
 const ActiveList = ({
   activeListIndex,
@@ -64,7 +65,9 @@ const ActiveList = ({
 
           {subListedItems}
         </>
-      ) : null}
+      ) : (
+        <EmptyList />
+      )}
     </div>
   );
 };
