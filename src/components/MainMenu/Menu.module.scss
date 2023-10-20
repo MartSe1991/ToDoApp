@@ -1,4 +1,4 @@
-@import "../../colors.scss";
+@import "../../colors.module.scss";
 @import "../../font-size.scss";
 @import "../../shared.scss";
 
@@ -24,7 +24,8 @@
 }
 
 .main {
-  display: inline-block;
+  display: block;
+  height: 100%;
 
   @media (max-width: $mobile_breakpoint) {
     width: auto;

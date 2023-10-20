@@ -3,9 +3,9 @@ import classes from "./EmptyList.module.scss";
 
 const EmptyList = () => {
   return (
-    <div className={classes.select}>
+    <div className={classes.container}>
       <ClipBoard />
-      <p className={classes.text}>Select your List !</p>
+      <p className={classes.text}>Please select a list</p>
     </div>
   );
 };

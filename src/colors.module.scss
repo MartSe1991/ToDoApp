@@ -4,3 +4,8 @@ $light_blue: #68c0ff;
 $primary: rgb(32, 32, 32);
 $secondary: rgb(53, 80, 168);
 $danger: #c70000;
+$grey: #cdcdcd;
+
+:export {
+  grey: $grey;
+}

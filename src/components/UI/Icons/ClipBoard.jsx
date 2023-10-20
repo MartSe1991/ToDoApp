@@ -1,3 +1,5 @@
+import Colors from "../../../colors.module.scss";
+
 const ClipBoard = ({ size = 400 }) => {
   return (
     <svg
@@ -5,7 +7,7 @@ const ClipBoard = ({ size = 400 }) => {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke="#ababab"
+      stroke={Colors.grey}
       width={size}
       height={size}
     >
