@@ -1,4 +1,4 @@
-@import "../../colors.scss";
+@import "../../colors.module.scss";
 @import "../../font-size.scss";
 
 .title {
@@ -12,7 +12,8 @@
 }
 
 .main {
-  display: inline-block;
+  display: block;
+  height: 100%;
 }
 
 .sublist_title {

@@ -1,0 +1,16 @@
+@import "../../colors.module.scss";
+@import "../../font-size.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.text {
+  color: $grey;
+  font-weight: bold;
+  font-size: $medium_large;
+}

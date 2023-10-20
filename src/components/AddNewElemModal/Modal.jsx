@@ -26,7 +26,8 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
       return;
     }
     onNewItemHandler(enteredListItem);
-    setEnteredListItem("");
+    onCloseModal();
+    // setEnteredListItem("");
   };
 
   const closeModal = (event) => {
