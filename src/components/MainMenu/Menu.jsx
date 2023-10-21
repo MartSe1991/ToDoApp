@@ -2,7 +2,13 @@ import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
 
-const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
+const Menu = ({
+  onAddItem,
+  items,
+  onItemClick,
+  activeListIndex,
+  visibleOnMobile,
+}) => {
   //GUARDA BENE LA STRUTTURA QUI SOTTO!!!!!!!!!!
 
   const listedItems = (
@@ -37,10 +43,12 @@ const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
   );
 
   return (
-    <div className={classes.main}>
-      <h1 className={classes.title}>To do App</h1>
-      {listedItems}
-      <AddNewElem onNewItemHandler={onAddItem} />
+    <div className={`${classes.column}${visibleOnMobile ? classes.open : ""}`}>
+      <div className={classes.main}>
+        <h1 className={classes.title}>To do App</h1>
+        {listedItems}
+        <AddNewElem onNewItemHandler={onAddItem} />
+      </div>
     </div>
   );
 };

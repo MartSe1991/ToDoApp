@@ -3,6 +3,7 @@ import AddNewElem from "../AddNewElemModal/AddNewElem";
 import TickBox from "./TickBox";
 import DeleteButton from "../UI/Button/DeleteButton";
 import EmptyList from "../ActiveList/EmptyList";
+import MobileBar from "./MobileBar";
 
 const ActiveList = ({
   activeListIndex,
@@ -11,6 +12,7 @@ const ActiveList = ({
   setItemComplete,
   removeListHandler,
   removeListItemHandler,
+  toggleMenu,
 }) => {
   const subListedItems = itemsList[activeListIndex] !== undefined && (
     <ul className={classes.ul}>
@@ -47,6 +49,7 @@ const ActiveList = ({
 
   return (
     <div className={classes.main}>
+      <MobileBar toggleMenu={toggleMenu} />
       {activeListIndex !== undefined && itemsList.length > 0 ? (
         <>
           <div className={classes.sublist_title}>

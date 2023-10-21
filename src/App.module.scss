@@ -3,16 +3,10 @@
 .main {
   display: flex;
   align-items: flex-start;
+  position: relative;
   // justify-content: flex-start;
   // margin: 0px 0px 0px 60px;
   // gap: 10px;
-}
-
-.column {
-  width: 300px;
-  height: 100vh;
-  background-color: $light_blue;
-  padding: 30px;
 }
 
 .secondPart {

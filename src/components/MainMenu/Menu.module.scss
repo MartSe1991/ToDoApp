@@ -2,6 +2,30 @@
 @import "../../font-size.scss";
 @import "../../shared.scss";
 
+.column {
+  width: 300px;
+  height: 100vh;
+  background-color: $light_blue;
+  padding: 30px;
+
+  &.open {
+  }
+
+  .main {
+    display: block;
+    height: 100%;
+  }
+
+  @media (max-width: $mobile_breakpoint) {
+    // proprieta della column su mobile (chiusa)
+    position: absolute;
+
+    &.open {
+      // proprieta da aggiungere a column solo quando il menu é visibile
+    }
+  }
+}
+
 .list {
   list-style: none; // senza bullet points!!
   font-size: $medium;
@@ -21,15 +45,6 @@
   font-size: $large;
   font-weight: bold;
   margin-bottom: 60px;
-}
-
-.main {
-  display: block;
-  height: 100%;
-
-  @media (max-width: $mobile_breakpoint) {
-    width: auto;
-  }
 }
 
 .selected {

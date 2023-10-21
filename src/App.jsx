@@ -23,6 +23,13 @@ import { useState, useEffect } from "react";
 function App() {
   const [itemsList, setItemsList] = useState([]);
   const [activeListIndex, setActiveListIndex] = useState(undefined);
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setOpenMenu((prevState) => {
+      return !prevState;
+    });
+  };
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // useEffect(() => {
@@ -117,14 +124,14 @@ function App() {
 
   return (
     <main className={classes.main}>
-      <div className={classes.column}>
-        <Menu
-          onAddItem={addListHandler}
-          items={itemsList}
-          onItemClick={activeListHandler}
-          activeListIndex={activeListIndex}
-        />
-      </div>
+      <Menu
+        onAddItem={addListHandler}
+        items={itemsList}
+        onItemClick={activeListHandler}
+        activeListIndex={activeListIndex}
+        visibleOnMobile={openMenu}
+      />
+
       <div className={classes.secondPart}>
         <ActiveList
           activeListIndex={activeListIndex}
@@ -133,6 +140,7 @@ function App() {
           setItemComplete={setItemComplete}
           removeListHandler={removeListHandler}
           removeListItemHandler={removeListItemHandler}
+          toggleMenu={toggleMenu}
         />
       </div>
     </main>
