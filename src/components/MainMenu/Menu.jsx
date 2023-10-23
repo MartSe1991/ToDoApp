@@ -1,6 +1,7 @@
 import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
+import CloseMenu from "./CloseMenu";
 
 const Menu = ({
   onAddItem,
@@ -8,6 +9,7 @@ const Menu = ({
   onItemClick,
   activeListIndex,
   visibleOnMobile,
+  toggleMenu,
 }) => {
   //GUARDA BENE LA STRUTTURA QUI SOTTO!!!!!!!!!!
 
@@ -43,8 +45,9 @@ const Menu = ({
   );
 
   return (
-    <div className={`${classes.column}${visibleOnMobile ? classes.open : ""}`}>
+    <div className={`${classes.column} ${visibleOnMobile ? classes.open : ""}`}>
       <div className={classes.main}>
+        <CloseMenu clickHandler={toggleMenu} />
         <h1 className={classes.title}>To do App</h1>
         {listedItems}
         <AddNewElem onNewItemHandler={onAddItem} />

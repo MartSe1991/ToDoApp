@@ -1,5 +1,6 @@
 @import "../../colors.module.scss";
 @import "../../font-size.scss";
+@import "../../shared.scss";
 
 .container {
   display: flex;
@@ -7,6 +8,12 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+
+  @media (max-width: $mobile_breakpoint) {
+    svg {
+      width: 100%;
+    }
+  }
 }
 
 .text {

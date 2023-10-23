@@ -130,6 +130,7 @@ function App() {
         onItemClick={activeListHandler}
         activeListIndex={activeListIndex}
         visibleOnMobile={openMenu}
+        toggleMenu={toggleMenu}
       />
 
       <div className={classes.secondPart}>
