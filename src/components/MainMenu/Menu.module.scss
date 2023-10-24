@@ -21,7 +21,7 @@ $column_width: 300px;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1; // piu z-index E alto piu z-index cresce
+    z-index: 2; // piu z-index E alto piu z-index cresce
     transform: translateX(
       -$column_width
     ); //vogliamo translarlo sull asse X (orizzontale)
@@ -36,10 +36,15 @@ $column_width: 300px;
 }
 
 .close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
+  display: none;
+
+  @media (max-width: $mobile_breakpoint) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
 }
 
 .list {

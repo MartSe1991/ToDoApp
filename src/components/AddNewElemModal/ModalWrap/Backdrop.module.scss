@@ -1,0 +1,33 @@
+@import "../../../shared.scss";
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  &.withMenu {
+    z-index: 1;
+    background-color: transparent;
+    display: none;
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
+  }
+
+  &.withModal {
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+/*
+z-index
+
+0 : pagina
+1: mobile menu backdrop
+2: mobile menu
+20: modal backdrop
+21: modal
+*/
