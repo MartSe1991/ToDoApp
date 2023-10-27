@@ -19,5 +19,21 @@
 .text {
   color: $grey;
   font-weight: bold;
-  font-size: $medium_large;
+  font-size: $medium-large;
+
+  &.mobile_only {
+    display: none;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
+  }
+
+  &.desktop_only {
+    display: block;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: none;
+    }
+  }
 }

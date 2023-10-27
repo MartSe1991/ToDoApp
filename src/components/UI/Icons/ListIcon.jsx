@@ -1,11 +1,13 @@
-const ListIcon = ({ size = 30 }) => {
+import Colors from "../../../colors.module.scss";
+
+const ListIcon = ({ size = 45 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke="currentColor"
+      stroke={Colors.grey}
       className="w-6 h-6"
       height={size}
       width={size}

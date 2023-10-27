@@ -69,7 +69,7 @@ const ActiveList = ({
           {subListedItems}
         </>
       ) : (
-        <EmptyList />
+        <EmptyList toggleMenu={toggleMenu} />
       )}
     </div>
   );
