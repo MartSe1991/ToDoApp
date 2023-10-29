@@ -2,6 +2,51 @@
 @import "../../font-size.scss";
 @import "../../shared.scss";
 
+$column_width: 300px;
+
+.column {
+  width: $column_width;
+  height: 100vh;
+  background-color: $light_blue;
+  padding: 30px;
+
+  .main {
+    display: block;
+    height: 100%;
+    position: relative;
+  }
+
+  @media (max-width: $mobile_breakpoint) {
+    // proprieta della column su mobile (chiusa)
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; // piu z-index E alto piu z-index cresce
+    transform: translateX(
+      -$column_width
+    ); //vogliamo translarlo sull asse X (orizzontale)
+    transition: 0.3s transform ease-in-out;
+
+    &.open {
+      // proprieta da aggiungere a column solo quando il menu é visibile
+      display: block;
+      transform: translateX(0);
+    }
+  }
+}
+
+.close {
+  display: none;
+
+  @media (max-width: $mobile_breakpoint) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+}
+
 .list {
   list-style: none; // senza bullet points!!
   font-size: $medium;
@@ -21,15 +66,6 @@
   font-size: $large;
   font-weight: bold;
   margin-bottom: 60px;
-}
-
-.main {
-  display: block;
-  height: 100%;
-
-  @media (max-width: $mobile_breakpoint) {
-    width: auto;
-  }
 }
 
 .selected {

@@ -1,16 +1,39 @@
 @import "../../colors.module.scss";
 @import "../../font-size.scss";
+@import "../../shared.scss";
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  flex-grow: 1;
+
+  @media (max-width: $mobile_breakpoint) {
+    svg {
+      width: 100%;
+    }
+  }
 }
 
 .text {
   color: $grey;
   font-weight: bold;
-  font-size: $medium_large;
+  font-size: $medium-large;
+
+  &.mobile_only {
+    display: none;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
+  }
+
+  &.desktop_only {
+    display: block;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: none;
+    }
+  }
 }

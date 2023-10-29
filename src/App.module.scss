@@ -1,24 +1,20 @@
 @import "./colors.module.scss";
+@import "./shared.scss";
 
 .main {
   display: flex;
   align-items: flex-start;
-  // justify-content: flex-start;
-  // margin: 0px 0px 0px 60px;
-  // gap: 10px;
-}
-
-.column {
-  width: 300px;
-  height: 100vh;
-  background-color: $light_blue;
-  padding: 30px;
+  position: relative;
 }
 
 .secondPart {
   height: 100vh;
   background-color: $white;
-  padding: 30px;
   flex-grow: 1;
   position: relative;
+  padding: 30px;
+
+  @media (max-width: $mobile_breakpoint) {
+    padding: 16px;
+  }
 }

@@ -1,0 +1,9 @@
+@import "../../shared.scss";
+
+.menuTrigger {
+  display: none;
+  @media (max-width: $mobile_breakpoint) {
+    display: block;
+    cursor: pointer;
+  }
+}

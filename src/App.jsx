@@ -23,14 +23,13 @@ import { useState, useEffect } from "react";
 function App() {
   const [itemsList, setItemsList] = useState([]);
   const [activeListIndex, setActiveListIndex] = useState(undefined);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
-  // useEffect(() => {
-  //   const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
-  //   if (storedUserLoggedInInformation === "1") {
-  //     setIsLoggedIn(true);
-  //   }
-  // }, []);
+  const toggleMenu = () => {
+    setOpenMenu((prevState) => {
+      return !prevState;
+    });
+  };
 
   const persistedListKey = "persisted_list";
 
@@ -117,14 +116,15 @@ function App() {
 
   return (
     <main className={classes.main}>
-      <div className={classes.column}>
-        <Menu
-          onAddItem={addListHandler}
-          items={itemsList}
-          onItemClick={activeListHandler}
-          activeListIndex={activeListIndex}
-        />
-      </div>
+      <Menu
+        onAddItem={addListHandler}
+        items={itemsList}
+        onItemClick={activeListHandler}
+        activeListIndex={activeListIndex}
+        visibleOnMobile={openMenu}
+        toggleMenu={toggleMenu}
+      />
+
       <div className={classes.secondPart}>
         <ActiveList
           activeListIndex={activeListIndex}
@@ -133,6 +133,7 @@ function App() {
           setItemComplete={setItemComplete}
           removeListHandler={removeListHandler}
           removeListItemHandler={removeListItemHandler}
+          toggleMenu={toggleMenu}
         />
       </div>
     </main>

@@ -1,5 +1,6 @@
 @import "../../colors.module.scss";
 @import "../../font-size.scss";
+@import "../../shared.scss";
 
 .title {
   color: $secondary;
@@ -12,8 +13,9 @@
 }
 
 .main {
-  display: block;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sublist_title {

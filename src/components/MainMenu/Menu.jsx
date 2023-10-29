@@ -1,8 +1,17 @@
 import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
+import CloseMenu from "./CloseMenu";
+import Backdrop from "../AddNewElemModal/ModalWrap/Backdrop";
 
-const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
+const Menu = ({
+  onAddItem,
+  items,
+  onItemClick,
+  activeListIndex,
+  visibleOnMobile,
+  toggleMenu,
+}) => {
   //GUARDA BENE LA STRUTTURA QUI SOTTO!!!!!!!!!!
 
   const listedItems = (
@@ -37,11 +46,19 @@ const Menu = ({ onAddItem, items, onItemClick, activeListIndex }) => {
   );
 
   return (
-    <div className={classes.main}>
-      <h1 className={classes.title}>To do App</h1>
-      {listedItems}
-      <AddNewElem onNewItemHandler={onAddItem} />
-    </div>
+    <>
+      <div
+        className={`${classes.column} ${visibleOnMobile ? classes.open : ""}`}
+      >
+        <div className={classes.main}>
+          <CloseMenu clickHandler={toggleMenu} />
+          <h1 className={classes.title}>To do App</h1>
+          {listedItems}
+          <AddNewElem onNewItemHandler={onAddItem} />
+        </div>
+      </div>
+      {visibleOnMobile && <Backdrop onClose={toggleMenu} type="menu" />}
+    </>
   );
 };
 

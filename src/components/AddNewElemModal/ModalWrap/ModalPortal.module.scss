@@ -1,26 +1,27 @@
-.backdrop {
+.spacer {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 21;
   width: 100%;
-  height: 100vh;
-  z-index: 20;
-  /* per sovrapporre elems */
-  background-color: rgba(0, 0, 0, 0.75);
+  max-width: 25rem; //era 40
+  padding: 0 16px;
 }
 
 .modal {
-  position: fixed;
-  top: 20vh;
   background-color: white;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 30;
-  width: 25rem; //era 40
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
 
   // @media (min-width: 768px) {
   //media query = mostrare css alternativo in base a dei
   // parametri(se schermo meno di 768px fai questo: ...
 }
+
+// creo uno spazio all interno del contenitore usando il padding per distanziare le scatole contenute in scatole
+// spacer é il contenitore piu esterno che racchiude modal, con padding padding: 0 16px creo un distanziamento tra spacer e il contenuto modal
+// ugualmente anche modal crea un distanziamento del suo container con il suo contenuto: padding: 2rem;
+// con le proprieta scritte sopra do al super container spacer un max width di 25rem sia per desktop che per mobile che si prende il 100% del width
+// disponibile (max di 25rem). Nel momento in cui arrivo a restringimento mobile si rendera evidente il padding: 0 16px;

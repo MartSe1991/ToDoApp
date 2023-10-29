@@ -8,3 +8,6 @@
   - when you open the page, the menu should be hidden by default
 
 - Medium-Hard: Ability to modify existing entries
+
+- Easy: Component refactoring
+- Extra: add aliases!
