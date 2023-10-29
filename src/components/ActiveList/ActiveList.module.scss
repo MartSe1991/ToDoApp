@@ -13,8 +13,9 @@
 }
 
 .main {
-  display: block;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sublist_title {
