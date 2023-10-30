@@ -62,9 +62,10 @@ const ActiveList = ({
               size="24"
             />
           </div>
-          <AddNewElem onNewItemHandler={onAddItem} buttonTitle="New Element...">
-            Add New Item
-          </AddNewElem>
+          <AddNewElem
+            onNewItemHandler={onAddItem}
+            buttonTitle="New Element..."
+          />
 
           {subListedItems}
         </>

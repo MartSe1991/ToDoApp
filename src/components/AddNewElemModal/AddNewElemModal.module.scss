@@ -1,8 +1,9 @@
 @import "@/colors.module.scss";
 @import "@/font-size.scss";
+@import "@/shared.scss";
 
 .list {
-  padding: 20px;
+  padding: $spacing_small;
 }
 
 .elems {

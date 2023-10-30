@@ -1,17 +1,18 @@
 @import "@/colors.module.scss";
 @import "@/font-size.scss";
+@import "@/shared.scss";
 
 .add_button {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: $spacing_extra_small;
   font-size: $medium;
   border: none;
   background: transparent;
   color: $secondary;
   padding: 5px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: $spacing_small;
 
   span {
     font-family: "openSansBold";
@@ -25,8 +26,8 @@
     color: white;
     font-family: "openSansBold";
     font-size: $large;
-    height: 25px;
-    width: 25px;
+    height: $spacing_small_medium;
+    width: $spacing_small_medium;
     border-radius: 50%;
     cursor: pointer;
   }
@@ -48,10 +49,10 @@
   border-color: transparent;
   font-weight: bold;
   color: $white;
-  padding: 5px;
-  cursor: pointer;
-  margin-top: 40px;
+  padding: $spacing_extra_small;
+  margin-top: $spacing_medium;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .danger {
