@@ -1,4 +1,4 @@
-import ClipBoard from "../UI/Icons/ClipBoard";
+import ClipBoard from "../../UI/Icons/ClipBoard";
 import classes from "./EmptyList.module.scss";
 
 const EmptyList = ({ toggleMenu }) => {

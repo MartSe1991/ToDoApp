@@ -1,9 +1,9 @@
 import classes from "./ActiveList.module.scss";
 import AddNewElem from "../AddNewElemModal/AddNewElem";
-import TickBox from "./TickBox";
+import TickBox from "./TickBox/TickBox";
 import DeleteButton from "../UI/Button/DeleteButton";
-import EmptyList from "../ActiveList/EmptyList";
-import MobileBar from "./MobileBar";
+import EmptyList from "./EmptyList/EmptyList";
+import MobileBar from "./MobileBar/MobileBar";
 
 const ActiveList = ({
   activeListIndex,

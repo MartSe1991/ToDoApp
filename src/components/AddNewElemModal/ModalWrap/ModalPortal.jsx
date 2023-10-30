@@ -1,7 +1,7 @@
 import classes from "./ModalPortal.module.scss";
 import ReactDOM from "react-dom";
 import React from "react";
-import Backdrop from "./Backdrop";
+import Backdrop from "../../UI/BackDrop/Backdrop";
 
 const ModalOverlay = (props) => {
   return (
