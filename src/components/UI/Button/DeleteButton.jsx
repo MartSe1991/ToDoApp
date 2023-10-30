@@ -1,12 +1,8 @@
 import TrashCanIcon from "../Icons/TrashCanIcon";
-import classes from "./DeleteButton.module.scss";
 
 const DeleteButton = ({ className, size, removeItemHandler }) => {
   return (
-    <div
-      className={`${classes.wrapper} ${className}`}
-      onClick={removeItemHandler}
-    >
+    <div className={className} onClick={removeItemHandler}>
       <TrashCanIcon size={size} />
     </div>
   );

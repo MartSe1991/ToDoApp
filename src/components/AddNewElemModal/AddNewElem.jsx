@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AddButton from "../UI/Button/AddButton";
+import AddButton from "@components/UI/Button/AddButton";
 import Modal from "./Modal/Modal";
-import classes from "../UI/Button/Button.module.scss";
+import classes from "@components/UI/Button/Button.module.scss";
 
 const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
   const [openModal, setOpenModal] = useState(false);

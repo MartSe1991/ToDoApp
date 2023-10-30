@@ -1,4 +1,4 @@
-import CloseIcon from "../UI/Icons/CloseIcon";
+import CloseIcon from "@components/UI/Icons/CloseIcon";
 import classes from "./Menu.module.scss";
 
 const CloseMenu = ({ clickHandler }) => {

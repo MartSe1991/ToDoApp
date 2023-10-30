@@ -1,4 +1,4 @@
-import Colors from "../../../colors.module.scss";
+import Colors from "@/colors.module.scss";
 
 const CloseIcon = ({ size = 20 }) => {
   return (

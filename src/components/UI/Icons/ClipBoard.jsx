@@ -1,4 +1,4 @@
-import Colors from "../../../colors.module.scss";
+import Colors from "@/colors.module.scss";
 
 const ClipBoard = ({ size = 400 }) => {
   return (

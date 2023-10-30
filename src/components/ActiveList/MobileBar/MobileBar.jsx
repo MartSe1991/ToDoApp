@@ -1,4 +1,4 @@
-import ListIcon from "../../UI/Icons/ListIcon";
+import ListIcon from "@components/UI/Icons/ListIcon";
 import classes from "./MobileBar.module.scss";
 
 const MobileBar = ({ toggleMenu }) => {

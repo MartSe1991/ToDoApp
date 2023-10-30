@@ -1,7 +1,7 @@
 import classes from "./ActiveList.module.scss";
-import AddNewElem from "../AddNewElemModal/AddNewElem";
+import AddNewElem from "@components/AddNewElemModal/AddNewElem";
 import TickBox from "./TickBox/TickBox";
-import DeleteButton from "../UI/Button/DeleteButton";
+import DeleteButton from "@components/UI/Button/DeleteButton";
 import EmptyList from "./EmptyList/EmptyList";
 import MobileBar from "./MobileBar/MobileBar";
 
