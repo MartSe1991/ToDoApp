@@ -1,7 +1,7 @@
-import Button from "../UI/Button/Button";
+import Button from "@components/UI/Button/Button";
 import { useState } from "react";
 import classes from "./Modal.module.scss";
-import ModalPortal from "./ModalWrap/ModalPortal";
+import ModalPortal from "../ModalWrap/ModalPortal";
 
 const Modal = ({ onNewItemHandler, onCloseModal }) => {
   //   In questo comp guarda come usi funzione che viene da App.jsx

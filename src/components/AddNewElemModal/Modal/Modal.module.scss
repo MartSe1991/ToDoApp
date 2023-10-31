@@ -1,17 +1,18 @@
-@import "../../colors.module.scss";
-@import "../../font-size.scss";
+@import "@/colors.module.scss";
+@import "@/font-size.scss";
+@import "@/shared.scss";
 
 .modal_title {
   font-size: $medium;
   color: $secondary;
   font-weight: bold;
   display: inline-block;
-  padding-bottom: 20px;
+  padding-bottom: $spacing_small_medium;
 }
 
 .input {
   width: 100%;
-  height: 30px;
+  height: $spacing_medium;
 }
 
 .buttons {

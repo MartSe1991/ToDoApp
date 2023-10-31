@@ -1,6 +1,6 @@
-@import "../../colors.module.scss";
-@import "../../font-size.scss";
-@import "../../shared.scss";
+@import "@/colors.module.scss";
+@import "@/font-size.scss";
+@import "@/shared.scss";
 
 .title {
   color: $secondary;
@@ -21,7 +21,6 @@
 .sublist_title {
   display: flex;
   align-items: center;
-  gap: 20px;
 
   .delete_big_button {
     display: none;
@@ -36,15 +35,14 @@
 }
 
 .list_item {
-  height: 45px;
+  height: $spacing_large;
   align-items: center;
   display: flex;
-  gap: 8px;
+  gap: $spacing_extra_small;
   list-style: none; // senza bullet points!!
   font-size: $medium;
   color: $secondary;
   font-weight: bold;
-  padding-bottom: 20px;
 
   .delete_button {
     display: none;
@@ -63,6 +61,5 @@
 }
 
 .ticketed {
-  color: gray;
-  opacity: 0.5;
+  color: $grey;
 }

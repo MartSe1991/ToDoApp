@@ -1,8 +1,8 @@
 import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
-import AddNewElem from "../AddNewElemModal/AddNewElem";
+import AddNewElem from "@components/AddNewElemModal/AddNewElem";
 import CloseMenu from "./CloseMenu";
-import Backdrop from "../AddNewElemModal/ModalWrap/Backdrop";
+import Backdrop from "@components/UI/BackDrop/Backdrop";
 
 const Menu = ({
   onAddItem,

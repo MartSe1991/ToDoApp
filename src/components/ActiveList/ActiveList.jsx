@@ -1,9 +1,9 @@
 import classes from "./ActiveList.module.scss";
-import AddNewElem from "../AddNewElemModal/AddNewElem";
-import TickBox from "./TickBox";
-import DeleteButton from "../UI/Button/DeleteButton";
-import EmptyList from "../ActiveList/EmptyList";
-import MobileBar from "./MobileBar";
+import AddNewElem from "@components/AddNewElemModal/AddNewElem";
+import TickBox from "./TickBox/TickBox";
+import DeleteButton from "@components/UI/Button/DeleteButton";
+import EmptyList from "./EmptyList/EmptyList";
+import MobileBar from "./MobileBar/MobileBar";
 
 const ActiveList = ({
   activeListIndex,
@@ -62,9 +62,10 @@ const ActiveList = ({
               size="24"
             />
           </div>
-          <AddNewElem onNewItemHandler={onAddItem} buttonTitle="New Element...">
-            Add New Item
-          </AddNewElem>
+          <AddNewElem
+            onNewItemHandler={onAddItem}
+            buttonTitle="New Element..."
+          />
 
           {subListedItems}
         </>

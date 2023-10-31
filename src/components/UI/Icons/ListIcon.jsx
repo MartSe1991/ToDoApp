@@ -1,4 +1,4 @@
-import Colors from "../../../colors.module.scss";
+import Colors from "@/colors.module.scss";
 
 const ListIcon = ({ size = 45 }) => {
   return (

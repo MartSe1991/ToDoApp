@@ -12,9 +12,9 @@
   background-color: $white;
   flex-grow: 1;
   position: relative;
-  padding: 30px;
+  padding: $spacing_medium;
 
   @media (max-width: $mobile_breakpoint) {
-    padding: 16px;
+    padding: $spacing_small;
   }
 }

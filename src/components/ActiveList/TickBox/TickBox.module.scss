@@ -1,0 +1,15 @@
+@import "@/colors.module.scss";
+@import "@/font-size.scss";
+@import "@/shared.scss";
+
+.box {
+  width: $spacing_small;
+  height: $spacing_small;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.ticketed_box {
+  background-color: $secondary;
+}
