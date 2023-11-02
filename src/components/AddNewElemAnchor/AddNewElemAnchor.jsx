@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import AddButton from "@components/UI/Button/AddButton";
-import Modal from "./Modal/Modal";
+import Modal from "../UI/Modal/Modal";
 import classes from "@components/UI/Button/Button.module.scss";
 
-const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
+const AddNewElemAnchor = ({ onNewItemHandler, buttonTitle }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const openModalHandler = () => {
@@ -18,8 +18,9 @@ const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
     <React.Fragment>
       {openModal && (
         <Modal
-          onNewItemHandler={onNewItemHandler}
+          onSubmitHandler={onNewItemHandler}
           onCloseModal={closeModalHandler}
+          modalTitle="New Element"
         />
       )}
 
@@ -34,4 +35,4 @@ const AddNewElem = ({ onNewItemHandler, buttonTitle }) => {
   );
 };
 
-export default AddNewElem;
+export default AddNewElemAnchor;

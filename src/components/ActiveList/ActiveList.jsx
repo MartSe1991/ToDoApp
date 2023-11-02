@@ -1,9 +1,10 @@
 import classes from "./ActiveList.module.scss";
-import AddNewElem from "@components/AddNewElemModal/AddNewElem";
+import AddNewElemAnchor from "../AddNewElemAnchor/AddNewElemAnchor";
 import TickBox from "./TickBox/TickBox";
 import DeleteButton from "@components/UI/Button/DeleteButton";
 import EmptyList from "./EmptyList/EmptyList";
 import MobileBar from "./MobileBar/MobileBar";
+import EditElemModal from "../EditElemModal/EditElemModal";
 
 const ActiveList = ({
   activeListIndex,
@@ -31,6 +32,7 @@ const ActiveList = ({
                 }}
               />
               <span>{item.name}</span>
+              <EditElemModal size="18" />
               <DeleteButton
                 removeItemHandler={() => {
                   // passo la key di riga 16 alla funzione removeListItemHandler che si sviluppa in App.jsx
@@ -56,13 +58,14 @@ const ActiveList = ({
             <h2 className={classes.title}>
               {itemsList[activeListIndex].title}
             </h2>
+            <EditElemModal size="22" className={classes.edit_icon} />
             <DeleteButton
               className={classes.delete_big_button}
               removeItemHandler={removeListHandler}
               size="24"
             />
           </div>
-          <AddNewElem
+          <AddNewElemAnchor
             onNewItemHandler={onAddItem}
             buttonTitle="New Element..."
           />

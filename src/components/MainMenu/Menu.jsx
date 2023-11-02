@@ -1,6 +1,6 @@
 import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
-import AddNewElem from "@components/AddNewElemModal/AddNewElem";
+import AddNewElemAnchor from "../AddNewElemAnchor/AddNewElemAnchor";
 import CloseMenu from "./CloseMenu";
 import Backdrop from "@components/UI/BackDrop/Backdrop";
 
@@ -54,7 +54,7 @@ const Menu = ({
           <CloseMenu clickHandler={toggleMenu} />
           <h1 className={classes.title}>To do App</h1>
           {listedItems}
-          <AddNewElem onNewItemHandler={onAddItem} />
+          <AddNewElemAnchor onNewItemHandler={onAddItem} />
         </div>
       </div>
       {visibleOnMobile && <Backdrop onClose={toggleMenu} type="menu" />}

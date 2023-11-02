@@ -6,10 +6,7 @@
   color: $secondary;
   font-size: $medium_large;
   font-weight: bold;
-  // margin-bottom: 60px;
-  // display: flex;
-  // align-items: center;
-  // gap: 20px;
+  transform: translateY(-3px);
 }
 
 .main {
@@ -21,14 +18,23 @@
 .sublist_title {
   display: flex;
   align-items: center;
+  gap: $spacing_small;
 
   .delete_big_button {
     display: none;
     cursor: pointer;
   }
 
+  .edit_icon {
+    display: none;
+    cursor: pointer;
+  }
+
   &:hover {
     .delete_big_button {
+      display: block;
+    }
+    .edit_icon {
       display: block;
     }
   }
