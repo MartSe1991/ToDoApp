@@ -5,7 +5,6 @@ import DeleteButton from "@components/UI/Button/DeleteButton";
 import EmptyList from "./EmptyList/EmptyList";
 import MobileBar from "./MobileBar/MobileBar";
 import EditElemAnchor from "@components/EditElemAnchor/EditElemAnchor";
-import Modal from "../UI/Modal/Modal";
 
 const ActiveList = ({
   activeListIndex,

@@ -3,6 +3,7 @@ import classes from "./Menu.module.scss";
 import AddNewElemAnchor from "../AddNewElemAnchor/AddNewElemAnchor";
 import CloseMenu from "./CloseMenu";
 import Backdrop from "@components/UI/BackDrop/Backdrop";
+import EditElemAnchor from "../EditElemAnchor/EditElemAnchor";
 
 const Menu = ({
   onAddItem,
@@ -39,6 +40,7 @@ const Menu = ({
                 return !item.complete;
               }).length
             } elements)`}
+            {<EditElemAnchor size="18" className={classes.edit_icon} />}
           </li>
         )
       )}

@@ -15,10 +15,10 @@
 
   - Add new props to the Modal component so it can be repurposed:
     DONE - modal title
-    - button label
-    - initial value (must be "" when adding a new element, while it should show the current value of an element while editing it )
-  - create a new EditElemModal component, and use the updated Modal component to show an 'Edit Modal'
-  - clicking on the edit button on each element should show the "Edit modal", both on Menu and Active list
+    DONE - button label
+    ???????? - initial value (must be "" when adding a new element, while it should show the current value of an element while editing it )
+    DONE - create a new EditElemModal component, and use the updated Modal component to show an 'Edit Modal'
+    DONE - clicking on the edit button on each element should show the "Edit modal", both on Menu and Active list
   - TO BE CONTINUED ====>1
 
 - Easy: Component refactoring

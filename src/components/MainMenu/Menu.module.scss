@@ -56,9 +56,20 @@ $column_width: 300px;
 }
 
 .elem {
+  display: flex;
   opacity: 0.5;
   cursor: pointer;
   padding-bottom: $spacing_small_medium;
+
+  .edit_icon {
+    display: none;
+    cursor: pointer;
+  }
+  &:hover {
+    .edit_icon {
+      display: block;
+    }
+  }
 }
 
 .title {
