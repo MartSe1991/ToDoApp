@@ -5,6 +5,7 @@ import DeleteButton from "@components/UI/Button/DeleteButton";
 import EmptyList from "./EmptyList/EmptyList";
 import MobileBar from "./MobileBar/MobileBar";
 import EditElemAnchor from "@components/EditElemAnchor/EditElemAnchor";
+import Modal from "../UI/Modal/Modal";
 
 const ActiveList = ({
   activeListIndex,
@@ -32,7 +33,11 @@ const ActiveList = ({
                 }}
               />
               <span>{item.name}</span>
-              <EditElemAnchor size="18" />
+              <EditElemAnchor
+                size="18"
+                className={classes.edit_icon}
+                // onClick={}
+              />
               <DeleteButton
                 removeItemHandler={() => {
                   // passo la key di riga 16 alla funzione removeListItemHandler che si sviluppa in App.jsx

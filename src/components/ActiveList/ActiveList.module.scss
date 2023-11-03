@@ -55,8 +55,16 @@
     cursor: pointer; // qst si mantiene anche sotto - sotto cambia solo display:block
   }
 
+  .edit_icon {
+    display: none;
+    cursor: pointer;
+  }
+
   &:hover {
     .delete_button {
+      display: block;
+    }
+    .edit_icon {
       display: block;
     }
   }
