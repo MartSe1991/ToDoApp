@@ -34,7 +34,6 @@ const Modal = ({
     }
     onSubmitHandler(enteredListItem);
     onCloseModal();
-    // setEnteredListItem("");
   };
 
   const closeModal = (event) => {

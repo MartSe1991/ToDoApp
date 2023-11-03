@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddButton from "@components/UI/Button/AddButton";
-import Modal from "../UI/Modal/Modal";
+import Modal from "@components/UI/Modal/Modal";
 import classes from "@components/UI/Button/Button.module.scss";
 
 const AddNewElemAnchor = ({ onNewItemHandler, buttonTitle }) => {

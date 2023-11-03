@@ -7,7 +7,7 @@ const EditPencil = ({ size }) => {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke={Colors}
+      stroke={Colors.blue}
       height={size}
       width={size}
     >
