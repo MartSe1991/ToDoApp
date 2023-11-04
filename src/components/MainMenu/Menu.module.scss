@@ -60,6 +60,7 @@ $column_width: 300px;
 
 .elem {
   display: flex;
+  gap: $spacing_extra_small;
   opacity: 0.5;
   cursor: pointer;
   height: $spacing_small;
