@@ -32,11 +32,7 @@ const ActiveList = ({
                 }}
               />
               <span>{item.name}</span>
-              <EditElemAnchor
-                size="18"
-                className={classes.edit_icon}
-                // onClick={}
-              />
+              <EditElemAnchor size="18" className={classes.edit_icon} />
               <DeleteButton
                 removeItemHandler={() => {
                   // passo la key di riga 16 alla funzione removeListItemHandler che si sviluppa in App.jsx

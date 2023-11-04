@@ -53,17 +53,24 @@ $column_width: 300px;
   color: $secondary;
   font-weight: bold;
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .elem {
   display: flex;
   opacity: 0.5;
   cursor: pointer;
-  padding-bottom: $spacing_small_medium;
+  height: $spacing_small;
 
   .edit_icon {
     display: none;
     cursor: pointer;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
   }
   &:hover {
     .edit_icon {

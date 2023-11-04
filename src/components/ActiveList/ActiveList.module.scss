@@ -23,11 +23,19 @@
   .delete_big_button {
     display: none;
     cursor: pointer;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
   }
 
   .edit_icon {
     display: none;
     cursor: pointer;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
   }
 
   &:hover {
@@ -53,11 +61,19 @@
   .delete_button {
     display: none;
     cursor: pointer; // qst si mantiene anche sotto - sotto cambia solo display:block
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
   }
 
   .edit_icon {
     display: none;
     cursor: pointer;
+
+    @media (max-width: $mobile_breakpoint) {
+      display: block;
+    }
   }
 
   &:hover {
