@@ -59,6 +59,18 @@ function App() {
     });
   };
 
+  // la funzione modifica l elemento che viene cliccato - su l'edit icon -
+  // in Menu list e nel titolo h2 della lista attiva in quel momento
+  // uItem é il nuovo valore - stringa - da assegnare
+  // itemIndex E l'indice dell elemento selezionato nella list
+  const editListHandler = (uItem, itemIndex) => {
+    console.log("EDITING LIST", uItem, itemIndex);
+    const itemsListCopy = [...itemsList];
+    const selectedElem = itemsListCopy[itemIndex];
+    selectedElem.title = uItem;
+    setItemsList(itemsListCopy);
+  };
+
   const activeListHandler = (index) => {
     setActiveListIndex(index);
   };
@@ -80,11 +92,22 @@ function App() {
     // Step 4: optional (fai console.log della copia dell'object)
   };
 
+  // la funzione modifica lelemento in una sublist che viene cliccato con l'edit icon -
+  // uItem é il nuovo valore - stringa - da assegnare
+  // itemIndex E l'indice dell elemento selezionato nella sublist
+  const editItemInListHandler = (uItem, itemIndex) => {
+    console.log("EDITING ITEM IN LIST", uItem, itemIndex);
+    const itemsListCopy = [...itemsList];
+    const selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
+    selectedElem.name = uItem;
+    setItemsList(itemsListCopy);
+  };
+
   const setItemComplete = (itemIndex) => {
     //itemIndex in qst caso é la key dei sublist items
     console.log(itemIndex);
     const itemsListCopy = [...itemsList];
-    let selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
+    const selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
     selectedElem.complete = !selectedElem.complete;
     setItemsList(itemsListCopy);
     console.log(itemsListCopy);
@@ -118,6 +141,7 @@ function App() {
     <main className={classes.main}>
       <Menu
         onAddItem={addListHandler}
+        onEditItem={editListHandler}
         items={itemsList}
         onItemClick={activeListHandler}
         activeListIndex={activeListIndex}
@@ -130,6 +154,8 @@ function App() {
           activeListIndex={activeListIndex}
           itemsList={itemsList}
           onAddItem={addItemToListHandler}
+          onEditItem={editListHandler}
+          onEditItemInList={editItemInListHandler}
           setItemComplete={setItemComplete}
           removeListHandler={removeListHandler}
           removeListItemHandler={removeListItemHandler}

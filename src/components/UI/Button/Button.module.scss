@@ -10,7 +10,7 @@
   border: none;
   background: transparent;
   color: $secondary;
-  padding: 5px;
+  padding: $spacing_small;
   cursor: pointer;
   margin-top: $spacing_small;
 
@@ -61,4 +61,11 @@
 
 .default {
   background: $secondary;
+}
+
+.edit_button {
+  border: none;
+  background: transparent;
+  color: $secondary;
+  cursor: pointer;
 }

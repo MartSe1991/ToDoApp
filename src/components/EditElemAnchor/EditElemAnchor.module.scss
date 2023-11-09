@@ -1,0 +1,8 @@
+.edit_icon {
+  display: none;
+
+  &:hover {
+    display: block;
+    cursor: pointer;
+  }
+}

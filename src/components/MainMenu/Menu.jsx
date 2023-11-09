@@ -1,11 +1,13 @@
 import classes from "./Menu.module.scss";
 // import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
-import AddNewElem from "@components/AddNewElemModal/AddNewElem";
+import AddNewElemAnchor from "../AddNewElemAnchor/AddNewElemAnchor";
 import CloseMenu from "./CloseMenu";
 import Backdrop from "@components/UI/BackDrop/Backdrop";
+import EditElemAnchor from "../EditElemAnchor/EditElemAnchor";
 
 const Menu = ({
   onAddItem,
+  onEditItem,
   items,
   onItemClick,
   activeListIndex,
@@ -39,6 +41,14 @@ const Menu = ({
                 return !item.complete;
               }).length
             } elements)`}
+            {
+              <EditElemAnchor
+                size="18"
+                className={classes.edit_icon}
+                initialValue={item.title}
+                onEditItemHandler={(uItem) => onEditItem(uItem, key)}
+              />
+            }
           </li>
         )
       )}
@@ -54,7 +64,7 @@ const Menu = ({
           <CloseMenu clickHandler={toggleMenu} />
           <h1 className={classes.title}>To do App</h1>
           {listedItems}
-          <AddNewElem onNewItemHandler={onAddItem} />
+          <AddNewElemAnchor onNewItemHandler={onAddItem} />
         </div>
       </div>
       {visibleOnMobile && <Backdrop onClose={toggleMenu} type="menu" />}

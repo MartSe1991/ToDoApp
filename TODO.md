@@ -9,5 +9,8 @@
 
 - Medium-Hard: Ability to modify existing entries
 
-- Easy: Component refactoring
-- Extra: add aliases!
+- add typescript
+- add contexts
+- refactor some code in custom hooks
+- delete confirmation modal
+- Sono le cose che ti mostrero!

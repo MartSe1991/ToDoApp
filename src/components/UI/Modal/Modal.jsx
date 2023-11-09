@@ -3,11 +3,18 @@ import { useState } from "react";
 import classes from "./Modal.module.scss";
 import ModalPortal from "../ModalWrap/ModalPortal";
 
-const Modal = ({ onNewItemHandler, onCloseModal }) => {
+const Modal = ({
+  onSubmitHandler,
+  onCloseModal,
+  modalTitle,
+  submitButtonLabel = "Submit",
+  cancelButtonLabel = "Cancel",
+  initialValue = "",
+}) => {
   //   In questo comp guarda come usi funzione che viene da App.jsx
   // e gli passi valori contenuti in questo comp "enteredListItem"
 
-  const [enteredListItem, setEnteredListItem] = useState("");
+  const [enteredListItem, setEnteredListItem] = useState(initialValue);
 
   const capitalize = (string) => {
     return string[0].toUpperCase() + string.slice(1);
@@ -20,14 +27,13 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
   // PER SOPRA: ad onChange={listItemChangeHandler} dell'input
   // applico il capitalize all'event che onChange cattura
 
-  const addNewToDoItemHandler = (event) => {
+  const submitToDoItemHandler = (event) => {
     event.preventDefault();
     if (enteredListItem.trim().length === 0) {
       return;
     }
-    onNewItemHandler(enteredListItem);
+    onSubmitHandler(enteredListItem);
     onCloseModal();
-    // setEnteredListItem("");
   };
 
   const closeModal = (event) => {
@@ -37,9 +43,9 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
 
   return (
     <ModalPortal onClick={closeModal}>
-      <form onSubmit={addNewToDoItemHandler}>
+      <form onSubmit={submitToDoItemHandler}>
         <label htmlFor="list_item" className={classes["modal_title"]}>
-          New Element
+          {modalTitle}
         </label>
         <input
           placeholder="Enter text..."
@@ -51,9 +57,9 @@ const Modal = ({ onNewItemHandler, onCloseModal }) => {
         />
         <div className={classes.buttons}>
           <Button onClick={closeModal} variant={"danger"}>
-            Cancel
+            {cancelButtonLabel}
           </Button>
-          <Button>Create</Button>
+          <Button>{submitButtonLabel}</Button>
         </div>
       </form>
     </ModalPortal>
