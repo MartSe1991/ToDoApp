@@ -1,8 +1,30 @@
-# React + Vite
+# To Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This tool helps you keep track of your daily tasks on both desktop and mobile. It was created to showcase some of the main functionalities of React.
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was bootstrapped with [Vite](https://vitejs.dev/) and has been developed using React.
+
+SCSS is used as a style preprocessor.
+
+## Installing the project
+
+Run `npm install` in your Terminal to install all the required dependecies.
+
+## Running the project
+
+Run `npm start` in your Terminal. Visit [http://localhost:5173/](http://localhost:5173/) to access the project interface.
+
+## Using To Do App
+
+To Do App has been created with the purpose of helping you keeping track of your daily tasks.
+You can name your lists on the left side of the screen and visualize their contents by clicking on them.
+You can create new lists and new sublist elements by clicking the "New List" and "New Element" buttons, and you can also delete or edit both lists and their content by clicking the delete or edit icons.
+
+## Features
+
+- Add/ Modify/ Delete lists
+- Add/ Modify/ Delete items in lists
+- Setting items in list as complete
+- Persisting data in between sections
