@@ -7,6 +7,7 @@ import EditElemAnchor from "../EditElemAnchor/EditElemAnchor";
 
 const Menu = ({
   onAddItem,
+  onEditItem,
   items,
   onItemClick,
   activeListIndex,
@@ -40,7 +41,14 @@ const Menu = ({
                 return !item.complete;
               }).length
             } elements)`}
-            {<EditElemAnchor size="18" className={classes.edit_icon} />}
+            {
+              <EditElemAnchor
+                size="18"
+                className={classes.edit_icon}
+                initialValue={item.title}
+                onEditItemHandler={(uItem) => onEditItem(uItem, key)}
+              />
+            }
           </li>
         )
       )}

@@ -3,7 +3,12 @@ import { useState } from "react";
 import Modal from "@components/UI/Modal/Modal";
 import React from "react";
 
-const EditElemAnchor = ({ size, className }) => {
+const EditElemAnchor = ({
+  size,
+  className,
+  initialValue,
+  onEditItemHandler,
+}) => {
   const [openEditModal, setOpenEditModal] = useState(false);
 
   const openEditModalHandler = () => {
@@ -17,7 +22,12 @@ const EditElemAnchor = ({ size, className }) => {
   return (
     <React.Fragment>
       {openEditModal && (
-        <Modal onCloseModal={closeEditModalHandler} modalTitle="Edit Element" />
+        <Modal
+          onSubmitHandler={onEditItemHandler}
+          onCloseModal={closeEditModalHandler}
+          modalTitle="Edit Element"
+          initialValue={initialValue}
+        />
       )}
       <div className={className}>
         <EditButton size={size} onClick={openEditModalHandler} />
