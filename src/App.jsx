@@ -59,6 +59,10 @@ function App() {
     });
   };
 
+  // la funzione modifica l elemento che viene cliccato - su l'edit icon -
+  // in Menu list e nel titolo h2 della lista attiva in quel momento
+  // uItem é il nuovo valore - stringa - da assegnare
+  // itemIndex E l'indice dell elemento selezionato nella list
   const editListHandler = (uItem, itemIndex) => {
     console.log("EDITING LIST", uItem, itemIndex);
     const itemsListCopy = [...itemsList];
