@@ -3,7 +3,15 @@ import AddButton from "@components/UI/Button/AddButton";
 import Modal from "@components/UI/Modal/Modal";
 import classes from "@components/UI/Button/Button.module.scss";
 
-const AddNewElemAnchor = ({ onNewItemHandler, buttonTitle }) => {
+type TAddNewElemAnchor = {
+  onNewItemHandler: (uItem: string) => void;
+  buttonTitle?: string;
+};
+
+const AddNewElemAnchor = ({
+  onNewItemHandler,
+  buttonTitle,
+}: TAddNewElemAnchor) => {
   const [openModal, setOpenModal] = useState(false);
 
   const openModalHandler = () => {

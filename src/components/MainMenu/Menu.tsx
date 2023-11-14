@@ -1,9 +1,19 @@
 import classes from "./Menu.module.scss";
-// import AddNewElemModal from "../AddNewElemModal/AddNewElemModal";
 import AddNewElemAnchor from "../AddNewElemAnchor/AddNewElemAnchor";
 import CloseMenu from "./CloseMenu";
 import Backdrop from "@components/UI/BackDrop/Backdrop";
 import EditElemAnchor from "../EditElemAnchor/EditElemAnchor";
+import { TList } from "types";
+
+type TMenu = {
+  onAddItem: (uItem: string) => void;
+  onEditItem: (uItem: string, itemIndex: number) => void;
+  items: TList[];
+  onItemClick: (index: number) => void;
+  activeListIndex: number | undefined;
+  visibleOnMobile: boolean;
+  toggleMenu: () => void;
+};
 
 const Menu = ({
   onAddItem,
@@ -13,7 +23,7 @@ const Menu = ({
   activeListIndex,
   visibleOnMobile,
   toggleMenu,
-}) => {
+}: TMenu) => {
   //GUARDA BENE LA STRUTTURA QUI SOTTO!!!!!!!!!!
 
   const listedItems = (
@@ -46,7 +56,7 @@ const Menu = ({
                 size="18"
                 className={classes.edit_icon}
                 initialValue={item.title}
-                onEditItemHandler={(uItem) => onEditItem(uItem, key)}
+                onEditItemHandler={(uItem: string) => onEditItem(uItem, key)}
               />
             }
           </li>

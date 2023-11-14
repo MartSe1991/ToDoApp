@@ -2,6 +2,7 @@ import Menu from "./components/MainMenu/Menu";
 import ActiveList from "./components/ActiveList/ActiveList";
 import classes from "./App.module.scss";
 import { useState, useEffect } from "react";
+import { TList } from "types";
 
 // Step 1: creare state che memorizzi l'indice della lista selezionata
 // Step 2: creare un handler che riceva l'indice come parametro e che
@@ -21,8 +22,10 @@ import { useState, useEffect } from "react";
 // tutto questo serve a cliccare su pulsante aggiungi di ActiveList e vedere la modal
 
 function App() {
-  const [itemsList, setItemsList] = useState([]);
-  const [activeListIndex, setActiveListIndex] = useState(undefined);
+  const [itemsList, setItemsList] = useState<TList[]>([]);
+  const [activeListIndex, setActiveListIndex] = useState<number | undefined>(
+    undefined
+  );
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -51,9 +54,10 @@ function App() {
     if (itemsList && itemsList.length > 0) {
       localStorage.setItem(persistedListKey, JSON.stringify(itemsList));
     }
+    console.log(itemsList);
   }, [itemsList]);
 
-  const addListHandler = (uItem) => {
+  const addListHandler = (uItem: string) => {
     setItemsList((prevItem) => {
       return [...prevItem, { title: uItem, items: [] }];
     });
@@ -63,7 +67,7 @@ function App() {
   // in Menu list e nel titolo h2 della lista attiva in quel momento
   // uItem é il nuovo valore - stringa - da assegnare
   // itemIndex E l'indice dell elemento selezionato nella list
-  const editListHandler = (uItem, itemIndex) => {
+  const editListHandler = (uItem: string, itemIndex: number) => {
     console.log("EDITING LIST", uItem, itemIndex);
     const itemsListCopy = [...itemsList];
     const selectedElem = itemsListCopy[itemIndex];
@@ -71,19 +75,21 @@ function App() {
     setItemsList(itemsListCopy);
   };
 
-  const activeListHandler = (index) => {
+  const activeListHandler = (index: number) => {
     setActiveListIndex(index);
   };
 
   // aggiungi stringa inserita alla lista selezionata
-  const addItemToListHandler = (uItem) => {
-    const itemsListCopy = [...itemsList]; //devo creare copia perche react non permette di modificare il getter, e di sola lettura
-    itemsListCopy[activeListIndex].items.push({
-      name: uItem,
-      complete: false,
-    });
-    setItemsList(itemsListCopy);
-    console.log(itemsListCopy);
+  const addItemToListHandler = (uItem: string) => {
+    if (activeListIndex) {
+      const itemsListCopy = [...itemsList]; //devo creare copia perche react non permette di modificare il getter, e di sola lettura
+      itemsListCopy[activeListIndex].items.push({
+        name: uItem,
+        complete: false,
+      });
+      setItemsList(itemsListCopy);
+      console.log(itemsListCopy);
+    }
 
     // Step 1: crea copia di itemList all'interno di una costante (copia di un array)
     // Step 2: aggiungi all'array items all'interno della copia di itemsList[activeListIndex] un object con questa struttura:
@@ -95,27 +101,31 @@ function App() {
   // la funzione modifica lelemento in una sublist che viene cliccato con l'edit icon -
   // uItem é il nuovo valore - stringa - da assegnare
   // itemIndex E l'indice dell elemento selezionato nella sublist
-  const editItemInListHandler = (uItem, itemIndex) => {
-    console.log("EDITING ITEM IN LIST", uItem, itemIndex);
-    const itemsListCopy = [...itemsList];
-    const selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
-    selectedElem.name = uItem;
-    setItemsList(itemsListCopy);
+  const editItemInListHandler = (uItem: string, itemIndex: number) => {
+    if (activeListIndex) {
+      console.log("EDITING ITEM IN LIST", uItem, itemIndex);
+      const itemsListCopy = [...itemsList];
+      const selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
+      selectedElem.name = uItem;
+      setItemsList(itemsListCopy);
+    }
   };
 
-  const setItemComplete = (itemIndex) => {
-    //itemIndex in qst caso é la key dei sublist items
-    console.log(itemIndex);
-    const itemsListCopy = [...itemsList];
-    const selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
-    selectedElem.complete = !selectedElem.complete;
-    setItemsList(itemsListCopy);
-    console.log(itemsListCopy);
-    // Step 1: crea copia di itemList all'interno di una costante (copia di un array)
-    // Step 2: salva in una costante (selectedElem) l'elem della lista selezionato utilizzando itemListIndex come indice di itemListCopy e itemIndex come indice della sua proprieta items
-    // Step 3: setta la proprieta complete di questo object selezionato in modo che sia il contrario del suo valore corrente
-    // Step 4: prendi questo object modificato e fai setItemsList e usa qst object modificato come parametro
-    // Step 5: optional (fai console.log della copia dell'object)
+  const setItemComplete = (itemIndex: number) => {
+    if (activeListIndex) {
+      //itemIndex in qst caso é la key dei sublist items
+      console.log(itemIndex);
+      const itemsListCopy = [...itemsList];
+      const selectedElem = itemsListCopy[activeListIndex].items[itemIndex];
+      selectedElem.complete = !selectedElem.complete;
+      setItemsList(itemsListCopy);
+      console.log(itemsListCopy);
+      // Step 1: crea copia di itemList all'interno di una costante (copia di un array)
+      // Step 2: salva in una costante (selectedElem) l'elem della lista selezionato utilizzando itemListIndex come indice di itemListCopy e itemIndex come indice della sua proprieta items
+      // Step 3: setta la proprieta complete di questo object selezionato in modo che sia il contrario del suo valore corrente
+      // Step 4: prendi questo object modificato e fai setItemsList e usa qst object modificato come parametro
+      // Step 5: optional (fai console.log della copia dell'object)
+    }
   };
 
   const removeListHandler = () => {
@@ -126,15 +136,17 @@ function App() {
     setItemsList(filteredList);
   };
 
-  const removeListItemHandler = (selectedItemId) => {
-    // removeListItemHandler riceve "id" da activeList che corrisponde alla key dei subListElems mappati
-    const itemsListCopy = [...itemsList];
-    const activeSubList = itemsListCopy[activeListIndex];
-    activeSubList.items = activeSubList.items.filter((subItem, key) => {
-      //filtro gli items della lista attiva in quel momento
-      return key !== selectedItemId; //ritornami gli elems con key diversa da selectedItemId (l'id dell'elem con bidoncino cliccato)
-    });
-    setItemsList(itemsListCopy);
+  const removeListItemHandler = (selectedItemId: number) => {
+    if (activeListIndex) {
+      // removeListItemHandler riceve "id" da activeList che corrisponde alla key dei subListElems mappati
+      const itemsListCopy = [...itemsList];
+      const activeSubList = itemsListCopy[activeListIndex];
+      activeSubList.items = activeSubList.items.filter((_, key: number) => {
+        //filtro gli items della lista attiva in quel momento
+        return key !== selectedItemId; //ritornami gli elems con key diversa da selectedItemId (l'id dell'elem con bidoncino cliccato)
+      });
+      setItemsList(itemsListCopy);
+    }
   };
 
   return (
